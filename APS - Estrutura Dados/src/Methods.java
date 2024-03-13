@@ -14,6 +14,7 @@ public class Methods {
             prim = aux;
         }
         else {
+            aux.anterior = prox;
             prox.proximo = aux;
         }
         prox = aux;
@@ -45,8 +46,11 @@ public class Methods {
     }
 
     public void reverse() {
+        if (prim == null) {
+            System.out.println("Fila vazia!");
+            return;
+        }
         Nodo aux = prox;
-
         while (aux != null) {
             System.out.println("Matricula: " + aux.matricula + " Idade: " + aux.idade);
             aux = aux.anterior;
